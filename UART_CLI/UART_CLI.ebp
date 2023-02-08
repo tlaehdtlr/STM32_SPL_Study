@@ -110,6 +110,7 @@
 		<Unit filename="inc\stm32f0xx.h" />
 		<Unit filename="inc\stm32f0xx_conf.h" />
 		<Unit filename="inc\system_stm32f0xx.h" />
+		<Unit filename="inc\uart.h" />
 		<Unit filename="SPL\inc\stm32f0xx_adc.h" />
 		<Unit filename="SPL\inc\stm32f0xx_can.h" />
 		<Unit filename="SPL\inc\stm32f0xx_cec.h" />
@@ -210,6 +211,9 @@
 			<Option weight="0" />
 		</Unit>
 		<Unit filename="src\system_stm32f0xx.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src\uart.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="stm32f091rc_flash.ld" />

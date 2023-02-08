@@ -205,10 +205,17 @@
 1675758948 source:c:\users\2023851\projects\stm32_spl_study\uart_cli\src\system_stm32f0xx.c
 	"stm32f0xx.h"
 
-1675758840 source:c:\users\2023851\projects\stm32_spl_study\uart_cli\src\main.c
+1675832688 source:c:\users\2023851\projects\stm32_spl_study\uart_cli\src\main.c
 	"main.h"
+	"uart.h"
 	<stdio.h>
 
 1675743825 c:\users\2023851\projects\stm32_spl_study\uart_cli\inc\main.h
 	"stm32f0xx_conf.h"
+
+1675821433 c:\users\2023851\projects\stm32_spl_study\uart_cli\inc\uart.h
+	"stm32f0xx_conf.h"
+
+1675831990 source:c:\users\2023851\projects\stm32_spl_study\uart_cli\src\uart.c
+	"uart.h"
 
