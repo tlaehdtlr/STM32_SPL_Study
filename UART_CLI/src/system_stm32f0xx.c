@@ -166,7 +166,8 @@ void SystemInit (void)
   RCC->CFGR &= (uint32_t)0xF8FFB80C;
 #else
   /* Reset SW[1:0], HPRE[3:0], PPRE[2:0], ADCPRE, MCOSEL[2:0], MCOPRE[2:0] and PLLNODIV bits */
-  RCC->CFGR &= (uint32_t)0x08FFB80C;
+  // RCC->CFGR &= (uint32_t)0x08FFB80C;
+  RCC->CFGR &= (uint32_t)0xF8FFB80C;
 #endif /* STM32F051 */
   
   /* Reset HSEON, CSSON and PLLON bits */
@@ -316,9 +317,11 @@ static void SetSysClock(void)
     /* PCLK = HCLK */
     RCC->CFGR |= (uint32_t)RCC_CFGR_PPRE_DIV1;
 
+    // HSE : 24MHz
     /* PLL configuration = HSE * 6 = 48 MHz */
     RCC->CFGR &= (uint32_t)((uint32_t)~(RCC_CFGR_PLLSRC | RCC_CFGR_PLLXTPRE | RCC_CFGR_PLLMULL));
-    RCC->CFGR |= (uint32_t)(RCC_CFGR_PLLSRC_PREDIV1 | RCC_CFGR_PLLXTPRE_PREDIV1 | RCC_CFGR_PLLMULL6);
+    //RCC->CFGR |= (uint32_t)(RCC_CFGR_PLLSRC_PREDIV1 | RCC_CFGR_PLLXTPRE_PREDIV1 | RCC_CFGR_PLLMULL6);
+    RCC->CFGR |= (uint32_t)(RCC_CFGR_PLLSRC_PREDIV1 | RCC_CFGR_PLLXTPRE_PREDIV1 | RCC_CFGR_PLLMULL2);
             
     /* Enable PLL */
     RCC->CR |= RCC_CR_PLLON;

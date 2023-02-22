@@ -57,6 +57,7 @@
  extern "C" {
 #endif
 
+#include "board_config.h"
 /** @addtogroup Library_configuration_section
   * @{
   */
@@ -132,7 +133,11 @@
         can define the HSE value in your toolchain compiler preprocessor.
   */
 #if !defined  (HSE_VALUE)
-#define HSE_VALUE    ((uint32_t)8000000) /*!< Value of the External oscillator in Hz*/
+  #if BOARD_TARGET == 0
+    #define HSE_VALUE    ((uint32_t)8000000) /*!< Value of the External oscillator in Hz*/
+  #elif BOARD_TARGET == 1
+    #define HSE_VALUE    ((uint32_t)24000000) /*!< Value of the External oscillator in Hz*/
+  #endif
 #endif /* HSE_VALUE */
 
 /**
