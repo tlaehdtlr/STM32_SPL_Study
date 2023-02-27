@@ -1,9 +1,7 @@
 #include "main.h"
 #include "uart.h"
 #include <stdio.h>
-
-#define DEBUG_USART     USART6
-
+#include "board_config.h"
 
 void v_delay(uint32_t nCount)
 {

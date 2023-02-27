@@ -199,15 +199,16 @@
 	"stm32f0xx_wwdg.h"
 	"stm32f0xx_rcc.h"
 
-1676959977 source:c:\users\2023851\projects\stm32_spl_study\uart_cli\src\main.c
+1677228691 source:c:\users\2023851\projects\stm32_spl_study\uart_cli\src\main.c
 	"main.h"
 	"uart.h"
 	<stdio.h>
+	"board_config.h"
 
 1676337630 c:\users\2023851\projects\stm32_spl_study\uart_cli\inc\main.h
 	"stm32f0xx_conf.h"
 
-1676959723 c:\users\2023851\projects\stm32_spl_study\uart_cli\inc\uart.h
+1677228669 c:\users\2023851\projects\stm32_spl_study\uart_cli\inc\uart.h
 	"stm32f0xx_conf.h"
 
 1675743824 source:c:\users\2023851\projects\stm32_spl_study\uart_cli\spl\src\stm32f0xx_adc.c
@@ -217,9 +218,14 @@
 1676363958 source:c:\users\2023851\projects\stm32_spl_study\uart_cli\src\system_stm32f0xx.c
 	"stm32f0xx.h"
 
-1676960140 source:c:\users\2023851\projects\stm32_spl_study\uart_cli\src\uart.c
+1677459084 source:c:\users\2023851\projects\stm32_spl_study\uart_cli\src\uart.c
 	"uart.h"
 	<stdio.h>
+	"board_config.h"
+	"cli.h"
 
-1676960720 c:\users\2023851\projects\stm32_spl_study\uart_cli\inc\board_config.h
+1677459005 c:\users\2023851\projects\stm32_spl_study\uart_cli\inc\board_config.h
+
+1677229630 c:\users\2023851\projects\stm32_spl_study\uart_cli\inc\cli.h
+	"stm32f0xx_conf.h"
 

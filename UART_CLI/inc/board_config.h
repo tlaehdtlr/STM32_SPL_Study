@@ -9,6 +9,7 @@
 */
 #define BOARD_TARGET    0
 
+#define DEBUG_USART     USART6
 
 
 #endif /* __BOARD_CONFIG_H */

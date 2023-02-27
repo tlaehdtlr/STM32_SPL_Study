@@ -1,7 +1,9 @@
 #include "uart.h"
 #include <stdio.h>
+#include "board_config.h"
+#include "cli.h"
 
-#define UART_RX_BUF_SIZE    16
+#define UART_RX_BUF_SIZE    256
 
 
 static uint8_t              l_c_uart2_rx_buf[UART_RX_BUF_SIZE] = {0,};
@@ -223,16 +225,37 @@ void uart_check_rx(void)
 {
     if (l_n_uart2_rx_idx != l_n_uart2_read_idx)
     {
-        printf("input : %c \r\n", l_c_uart2_rx_buf[l_n_uart2_read_idx++ & (UART_RX_BUF_SIZE-1)]);
+        if (DEBUG_USART == USART2)
+        {
+            shell_process_command_interactive(l_c_uart2_rx_buf[l_n_uart2_read_idx++ & (UART_RX_BUF_SIZE-1)]);
+        }
+        else
+        {
+            printf("input : %c \r\n", l_c_uart2_rx_buf[l_n_uart2_read_idx++ & (UART_RX_BUF_SIZE-1)]);
+        }
     }
 
     if (l_n_uart3_rx_idx != l_n_uart3_read_idx)
     {
-        printf("input : %c \r\n", l_c_uart3_rx_buf[l_n_uart3_read_idx++ & (UART_RX_BUF_SIZE-1)]);
+        if (DEBUG_USART == USART3)
+        {
+            shell_process_command_interactive(l_c_uart3_rx_buf[l_n_uart3_read_idx++ & (UART_RX_BUF_SIZE-1)]);
+        }
+        else
+        {
+            printf("input : %c \r\n", l_c_uart3_rx_buf[l_n_uart3_read_idx++ & (UART_RX_BUF_SIZE-1)]);
+        }
     }
 
     if (l_n_uart6_rx_idx != l_n_uart6_read_idx)
     {
-        printf("input : %c \r\n", l_c_uart6_rx_buf[l_n_uart6_read_idx++ & (UART_RX_BUF_SIZE-1)]);
+        if (DEBUG_USART == USART6)
+        {
+            shell_process_command_interactive(l_c_uart6_rx_buf[l_n_uart6_read_idx++ & (UART_RX_BUF_SIZE-1)]);
+        }
+        else
+        {
+            printf("input : %c \r\n", l_c_uart6_rx_buf[l_n_uart6_read_idx++ & (UART_RX_BUF_SIZE-1)]);
+        }
     }
 }
