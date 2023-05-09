@@ -55,5 +55,5 @@ void timer_init(void)
     TIM_ITConfig(TIM16, TIM_IT_Update, ENABLE);
 
     /* TIM16 enable counter */
-    TIM_Cmd(TIM16, ENABLE);
+    // TIM_Cmd(TIM16, ENABLE);
 }

@@ -36,7 +36,7 @@ void led_init(void)
     GPIO_Init(USER_LED_PORT, &gpio_init_t);
 }
 
-
+uint32_t cnt1 = 0;
 int main(void)
 {
     led_init();
@@ -45,14 +45,41 @@ int main(void)
     led_on();
     while(1)
     {
-
+        if (cnt1++ == 10000000)
+        {
+            TIM_Cmd(TIM16, ENABLE);
+            cnt1 = 0;
+        }
     }
 }
 
+int cnt = 0;
 void TIM16_IRQHandler(void)
 {
     if (TIM_GetITStatus(TIM16, TIM_IT_Update) != RESET)
     {
+        switch (cnt++)
+        {
+            case 5:
+            {
+                TIM16->ARR = 1000-1;
+            }
+                break;
+            case 10:
+            {
+                TIM16->ARR = 2000-1;
+            }
+                break;
+            case 15:
+            {
+                TIM_Cmd(TIM16, DISABLE);
+                cnt = 0;
+            }
+                break;
+            default:
+                break;
+        }
+
         TIM_ClearITPendingBit(TIM16, TIM_IT_Update);
         led_toggle();
     }
